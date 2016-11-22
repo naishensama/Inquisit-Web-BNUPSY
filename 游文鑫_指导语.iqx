@@ -1,0 +1,40 @@
+﻿
+//完全就是一张图片【摆手】
+
+<picture instruction>
+	/ items =("instruction.jpg")
+	/ size = (1920,1080)
+</picture>
+
+<picture end>
+	/ items =("end.png")
+	/ size = (1920,1080)
+</picture>
+
+
+<trial instruction>
+	/ validresponse = (" ")
+	/ stimulusframes= [1=instruction]
+	/ recorddata = false
+</trial>
+
+<trial end>
+	/ validresponse = (anyresponse)
+	/ stimulusframes= [1=end]
+	/ recorddata = false
+</trial>
+
+
+<block unbelievable>
+	/ trials = [1=instruction]
+	/ screencolor = (255,255,255)
+</block>
+
+<block end>
+	/ trials = [1=end]
+	/ screencolor = (255,255,255)
+</block>
+
+<expt instruction>
+	/ blocks = [1=unbelievable;2=end]
+</expt>
